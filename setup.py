@@ -3,21 +3,7 @@ File for constants and stuff for Eerie PA
 '''
 
 import pygame
-from pygame.locals import (
-    K_UP,
-    K_DOWN,
-    K_LEFT,
-    K_RIGHT,
-    K_ESCAPE,
-    KEYDOWN,
-    QUIT,
-    K_p,
-    K_SPACE,
-    K_w,
-    K_a,
-    K_s,
-    K_d
-)
+from pygame.locals import *
 
 pygame.display.init()
 pygame.font.init()
@@ -31,4 +17,11 @@ GREEN = (0,255,0)
 BLUE = (0,0,255)
 
 #Window Stuff
-WIN_SIZE = (1000, 750)
+WIN_WIDTH = 1000
+WIN_HEIGHT = 750
+WIN_SIZE = (WIN_WIDTH, WIN_HEIGHT)
+
+
+GW_WIDTH = WIN_WIDTH - 50
+GW_HEIGHT = WIN_HEIGHT - 50
+GW_SIZE = (GW_WIDTH, GW_HEIGHT)
