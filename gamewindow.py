@@ -14,11 +14,17 @@ class GameWindow(pygame.Surface):
         #display stuff
         self.display = Display()
 
-        #player stuff
-        self.player = None
+        #level stuff
+        self.level = 'hi'
 
-    def update(self):
-        self.display.update()
+
+    def update(self, keys):
+        for key in MOVEMENT_KEYS:
+            if keys[key]:
+                delta = MOVEMENT_KEYS[key]
+                print(delta)
+
+        self.display.update(self.level)
 
 
     def draw(self, screen):

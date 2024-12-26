@@ -24,11 +24,13 @@ gw = GameWindow()
 
 running = True
 while running:
+    keys = pygame.key.get_pressed()
+
     for event in pygame.event.get():
         if event.type == QUIT:
             running = False
     
-    gw.update()
+    gw.update(keys)
 
     screen.fill( WHITE )
 
