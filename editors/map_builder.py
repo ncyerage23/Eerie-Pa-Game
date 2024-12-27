@@ -1,5 +1,7 @@
 '''
 Map builder for Eerie PA
+
+still needs to be able to change size of the map
 '''
 
 import pygame
@@ -61,7 +63,6 @@ def draw_grid():
             # If there's an image in the grid cell, draw it
             if grid[row][col] is not None:
                 screen.blit(grid[row][col][0], rect)
-            pygame.draw.rect(screen, (200, 200, 200), rect, 1)  # Draw grid lines
 
 # Draw the buttons
 def draw_buttons():
