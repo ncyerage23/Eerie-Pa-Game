@@ -1,0 +1,16 @@
+So, what's next for the editors?
+
+We need to fix up the map builder and tile creator so there's some better functionality,
+including variable size of maps and idk what else. Also if there's no texture, there needs
+to be a default or something, like the minecraft missing texture
+
+Entities are the next thing. Or objects, idk. Things the player can interact with.
+Rocks, buildings, doors, etc. 
+
+We need an editor for this, that will allow the user to assign properties to those entities. 
+I'm not sure how that'll be done, but yeah. That's the next step. 
+
+Then, a file for each map with its info, including background and all entities and their information
+
+When that's done, I'm sure we'll need some major revisions to make it all work better. But then,
+we need to build a way for the game to read it all and put it up on the screen for the game. 
