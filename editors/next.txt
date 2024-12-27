@@ -12,5 +12,7 @@ I'm not sure how that'll be done, but yeah. That's the next step.
 
 Then, a file for each map with its info, including background and all entities and their information
 
+Also npc's at some point, but that's gonna be more difficult, lol. 
+
 When that's done, I'm sure we'll need some major revisions to make it all work better. But then,
 we need to build a way for the game to read it all and put it up on the screen for the game. 
