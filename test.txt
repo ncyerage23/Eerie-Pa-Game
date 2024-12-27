@@ -1,0 +1,17 @@
+Notes for Eerie PA 2D Prototype
+
+
+Maybe I should make a super simplistic version first? Idk. 
+
+The Plan:
+    Setup the main map
+    Create the tile stuff for the environment
+    Make a map editor to build the maps (just outside for now)
+
+    Make the player
+    Setup movement for the player within the map (just outside)
+
+    Setup the buildings (the exteriors)
+    setup the doors and letting the player enter buildings
+
+    Get to npcs and that stuff
