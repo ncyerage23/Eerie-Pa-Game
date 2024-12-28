@@ -17,7 +17,7 @@ class GameWindow(pygame.Surface):
         self.display = Display()
 
         #map stuff
-        self.map = Map('outside_test')
+        self.map = Map('outside_test', (0,0))
 
         #player stuff
         self.player = Player(0,0)
@@ -25,15 +25,15 @@ class GameWindow(pygame.Surface):
 
     def update(self):
         keys = pygame.key.get_pressed()
-        speed = 75
+        speed = 1
 
-        self.map.set_velocity(
+        '''self.map.set_velocity(
             x=(keys[pygame.K_a] - keys[pygame.K_d]) * speed,
             y=(keys[pygame.K_w] - keys[pygame.K_s]) * speed,
-        )
+        )'''
         
-        self.map.update( .06 )
-        self.player.update( ((keys[pygame.K_d] - keys[pygame.K_a]) * speed, (keys[pygame.K_s] - keys[pygame.K_w]) * speed) )
+        self.map.update(None)
+        self.player.update( ((keys[pygame.K_d] - keys[pygame.K_a]) * speed, (keys[pygame.K_w] - keys[pygame.K_s]) * speed) )
         self.display.update(self.map.name, (self.player.x, self.player.y))
 
 
