@@ -17,21 +17,24 @@ class GameWindow(pygame.Surface):
         self.display = Display()
 
         #map stuff
-        self.map = Map()
+        self.map = Map('outside_test')
 
         #player stuff
         self.player = Player(0,0)
 
 
-    def update(self, keys):
-        for key in MOVEMENT_KEYS:
-            if keys[key]:
-                delta = MOVEMENT_KEYS[key]
-                print(delta)
-            
-        self.map.update()
-        self.player.update()
-        self.display.update(self.level, (self.player.x, self.player.y))
+    def update(self):
+        keys = pygame.key.get_pressed()
+        speed = 75
+
+        self.map.set_velocity(
+            x=(keys[pygame.K_a] - keys[pygame.K_d]) * speed,
+            y=(keys[pygame.K_w] - keys[pygame.K_s]) * speed,
+        )
+        
+        self.map.update( .06 )
+        self.player.update( ((keys[pygame.K_d] - keys[pygame.K_a]) * speed, (keys[pygame.K_s] - keys[pygame.K_w]) * speed) )
+        self.display.update(self.map.name, (self.player.x, self.player.y))
 
 
     def draw(self, screen):
@@ -50,6 +53,5 @@ class GameWindow(pygame.Surface):
 
         #then display
         self.display.draw(self)
-
 
         screen.blit(self, self.rect)

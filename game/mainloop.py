@@ -18,20 +18,18 @@ gw = GameWindow()
 
 running = True
 while running:
-    keys = pygame.key.get_pressed()
-
     for event in pygame.event.get():
         if event.type == QUIT:
             running = False
     
-    gw.update(keys)
+    gw.update()
 
     screen.fill( WHITE )
 
     gw.draw(screen)
 
     pygame.display.flip()
-    clock.tick(60)
+    clock.tick(FPS)
 
 pygame.quit()
 

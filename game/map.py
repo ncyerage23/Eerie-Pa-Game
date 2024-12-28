@@ -3,11 +3,24 @@ Object for maps
 '''
 
 from setup import *
+import os
 
-#should the map be an array of tiles? idek
+class Map:
+    def __init__(self, name):
+        self.name = name
+        image_path = f"../images/maps/{name}.png"
+        self.surf = pygame.image.load(image_path)
+        self.rect = self.surf.get_rect()
+        self.velocity = pygame.Vector2(0, 0)
 
-class Map(pygame.Surface):
-    def __init__(self, width, height):
-        super().__init__( (width * TILE_SIZE, height * TILE_SIZE) )
+    def update(self, dt):
+        """Update the map's position based on velocity and time delta."""
+        self.rect.move_ip(self.velocity * dt)
 
-        #fill up map (idk really)
+    def set_velocity(self, x, y):
+        """Set the velocity of the map."""
+        self.velocity = pygame.Vector2(x, y)
+
+    def draw(self, screen):
+        screen.blit(self.surf, self.rect)
+        

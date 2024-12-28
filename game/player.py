@@ -13,7 +13,9 @@ class Player(pygame.sprite.Sprite):
 
         self.x, self.y = startX, startY
     
-    def update(self):
+    def update(self, change):
+        self.x += change[0]
+        self.y += change[1]
         self.surf.fill(RED)
 
     def draw(self, screen):
