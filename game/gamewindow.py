@@ -5,7 +5,7 @@ File for gamewindow actions for Eerie, PA
 from setup import *
 from display import Display
 from player import Player
-from map import Map
+from level import Level
 
 class GameWindow(pygame.Surface):
     def __init__(self):
@@ -13,28 +13,19 @@ class GameWindow(pygame.Surface):
         self.fill(BLACK)
         self.rect = self.get_rect()
 
+        #player stuff
+        self.player = Player( (25,25) )
+
         #display stuff
         self.display = Display()
 
-        #map stuff
-        self.map = Map('outside_test', (0,0))
-
-        #player stuff
-        self.player = Player(0,0)
+        #level stuff
+        #self.current_level = Level('outside_test', self, self.player)
 
 
     def update(self):
-        keys = pygame.key.get_pressed()
-        speed = 1
-
-        '''self.map.set_velocity(
-            x=(keys[pygame.K_a] - keys[pygame.K_d]) * speed,
-            y=(keys[pygame.K_w] - keys[pygame.K_s]) * speed,
-        )'''
-        
-        self.map.update(None)
-        self.player.update( ((keys[pygame.K_d] - keys[pygame.K_a]) * speed, (keys[pygame.K_w] - keys[pygame.K_s]) * speed) )
-        self.display.update(self.map.name, (self.player.x, self.player.y))
+        self.player.update()
+        self.display.update('hi', (0, 0))
 
 
     def draw(self, screen):
@@ -44,7 +35,6 @@ class GameWindow(pygame.Surface):
         self.rect.center = (w//2, h//2)
 
         #first draw map
-        self.map.draw(self)
 
         #then objects
 
