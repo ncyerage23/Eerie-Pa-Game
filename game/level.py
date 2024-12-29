@@ -11,7 +11,7 @@ class Level:
         self.level_name = level_name
         self.player = player
 
-        self.visibles = Camera()
+        self.visibles = None
         self.obstacles = pygame.sprite.Group()
 
         self.get_map()
@@ -22,6 +22,4 @@ class Level:
 
 
 
-class Camera(pygame.sprite.Group):
-    def __init__(self):
-        pass
+

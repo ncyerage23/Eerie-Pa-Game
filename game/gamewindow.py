@@ -45,3 +45,8 @@ class GameWindow(pygame.Surface):
         self.display.draw(self)
 
         screen.blit(self, self.rect)
+
+
+class Camera(pygame.sprite.Group):
+    def __init__(self):
+        pass
